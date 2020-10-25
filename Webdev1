@@ -8,5 +8,8 @@
 </head>
 <body>
     <!-- Our web map and content will go here -->
+
+		<!-- Add the Leaflet JavaScript library -->
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 </body>
 </html>
