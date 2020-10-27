@@ -16,7 +16,9 @@
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
 		// Create point feature for Kendall Square T Station
 		var myDataPoint = L.marker([42.362432, -71.086086]).addTo(map);
-
+		// Create line feature for Mass Ave Bridge, style and add to map
+		var myDataLine = L.polyline([[42.357227, -71.092631], [42.351411, -71.089723]],
+		    {color: 'red', weight: 10}).addTo(map);
 
 
 	</script>
