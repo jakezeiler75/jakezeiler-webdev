@@ -92,7 +92,15 @@
         // this template ({z}/{x}/{y}) allows leaflet to locate tiles with the
         // correct zoom, x, and y coordinates
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
+          var customLayer = L.geoJson(null  ,{
+              pointToLayer: function(feature,latlng){
+                return L.marker(latlng,{icon: airportIcon});
+              }
+          });
+          var airportsLayer = omnivore.csv('airports.csv', null, customLayer).addTo(map);
+
     </script>
+
 
 
 
