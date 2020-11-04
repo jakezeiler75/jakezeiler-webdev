@@ -139,5 +139,18 @@
                   }
               }).addTo(map);
           });
+          function calculatePartyPct(feature) {
+              var demVote = feature.properties.USPRSDFL;
+              var repVote = feature.properties.USPRSR;
+              var totalVote = feature.properties.USPRSTOTAL;
+              var demPct = Math.round(demVote/totalVote*100);
+              var repPct = Math.round(repVote/totalVote*100);
+              return {
+                  rep: repPct,
+                  dem: demPct
+              };
+          }
+      </script>
+  <script>
 
 </body></html>
