@@ -100,5 +100,33 @@
                       var fill;
 
                       var colors = ['#ca0020','#f4a582','#f7f7f7','#92c5de','#0571b0'];
+                      console.log('votePcts', votePcts);
+
+                      if (votePcts.rep >= 40) {
+                          fill = colors[0];
+                          console.log('rep40');
+                      }
+                      else if (votePcts.rep >= 35) {
+                          fill = colors[1];
+                          console.log('rep30');
+                      }
+                      else if (votePcts.rep >= 30 && votePcts.dem <= 59) {
+                          fill = colors[2];
+                          console.log('mid');
+                      }
+                      else if (votePcts.dem >= 60 && votePcts.dem <= 65) {
+                          fill = colors[3];
+                          console.log('dem65');
+                      }
+                      else {
+                          fill = colors[4];
+                          console.log('else');
+                      }
+                      return {
+                          color: '#636363',
+                          weight: 2,
+                          fillColor: fill,
+                          fillOpacity: 0.7
+                      }
 
 </body></html>
