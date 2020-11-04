@@ -128,5 +128,16 @@
                           fillColor: fill,
                           fillOpacity: 0.7
                       }
+                  },
+                  onEachFeature: function (feature, layer) {
+                      var votePcts = calculatePartyPct(feature)
+                      layer.bindPopup(
+                          "<h3>" + feature.properties.PCTNAME + "</h3>" +
+                          "<p>Democrat Vote: <span class='dem'>" + votePcts.dem + "%</span></p>" +
+                          "<p>Republican Vote: <span class='rep'>" + votePcts.rep + "%</span></p>"
+                      );
+                  }
+              }).addTo(map);
+          });
 
 </body></html>
